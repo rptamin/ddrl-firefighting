@@ -211,7 +211,7 @@ class MADQN(object):
         Method to train and output a network representing the control policy.
         """
         print('[MADQN] started at %s' % (time.strftime('%d-%b-%Y %H:%M')))
-        tic = time.clock()
+        tic = time.time()
 
         sim = LatticeForest(self.config.forest_dimension)
         num_agents = 10
@@ -365,7 +365,7 @@ class MADQN(object):
         # save results at end of training
         self.save_checkpoint()
 
-        toc = time.clock()
+        toc = time.time()
         dt = toc - tic
         print('[MADQN] completed at %s' % (time.strftime('%d-%b-%Y %H:%M')))
         print('[MADQN] %0.2fs = %0.2fm = %0.2fh elapsed' % (dt, dt/60, dt/3600))
@@ -376,7 +376,7 @@ class MADQN(object):
         """
         print('[MADQN] testing %s for %d episodes' % (method, num_episodes))
         print('[MADQN] started at %s' % (time.strftime('%d-%b-%Y %H:%M')))
-        tic = time.clock()
+        tic = time.time()
 
         sim = LatticeForest(self.config.forest_dimension)
         team = {i: UAV(numeric_id=i, fire_center=self.config.fire_center) for i in range(num_agents)}
@@ -462,7 +462,7 @@ class MADQN(object):
             if (episode+1) % 100 == 0:
                 print('[MADQN] completed %d simulations' % (episode+1))
 
-        toc = time.clock()
+        toc = time.time()
         dt = toc - tic
         print('[MADQN] completed at %s' % (time.strftime('%d-%b %H:%M')))
         print('[MADQN] %0.2fs = %0.2fm = %0.2fh elapsed' % (dt, dt/60, dt/3600))
