@@ -27,3 +27,6 @@ Paper citation:
 - `madqn.py`: Implementation of training algorithm, policy architecture, and aerial vehicle model.
 - `main.py`: Example usage of algorithm: train and test a network with simulations. 
 - `rlUtilities.py`: Helper utilities to simplify implementation of the reinforcement learning problem.
+
+### Additional Changes and Notes
+This repo is an extension of the work done by Ravi Haksar and Professor Mac Schwager for AAE590. The extension shall entail multiple fire propagation points and an analysis of the existing algorithms against such cases. Further modifications down the line shall entail implementations of time delay regarding refueling as well as terrain and wind impacts. 
