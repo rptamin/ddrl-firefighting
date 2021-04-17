@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
     # train and save a network
     algorithm = MADQN(mode='train')
-    algorithm.train(num_episodes=1)
+    algorithm.train(num_episodes=2)
 
     # test a network or the heuristic
     # load_filename = 
@@ -16,12 +16,12 @@ if __name__ == '__main__':
     test_method = 'network'
     algorithm = MADQN(mode='test', filename=None)
     results = algorithm.test(num_episodes=1, method=test_method)
-    print(list(results))
-    print(results)
+    #print(list(results))
+    #print(results)
     forest_states = results.get(0)
-    forest_state = list(forest_states.get('sim_states'))[100]
-    print(forest_state)
-    image = rl.latticeforest_image(forest_state, (0,0), (100,100))
+    forest_state = list(forest_states.get('sim_states'))[-1]
+    #print(forest_state)
+    image = rl.latticeforest_image(forest_state, (25,25), (50,50))
     plt.imshow(image)
     plt.show()
     # save the results to file

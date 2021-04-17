@@ -214,7 +214,7 @@ class MADQN(object):
         tic = time.time()
 
         sim = LatticeForest(self.config.forest_dimension)
-        num_agents = 10
+        num_agents = 50
         team = {i: UAV(numeric_id=i, fire_center=self.config.fire_center) for i in range(num_agents)}
 
         model_updates = 1
